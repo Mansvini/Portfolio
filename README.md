@@ -1,6 +1,4 @@
-# ⚡️ 
-
-## A minimal portfolio!
+# ⚡️ A minimal portfolio!
 
 ## Features
 
