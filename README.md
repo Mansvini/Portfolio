@@ -20,9 +20,5 @@
 
 ## Authors
 
+- **Mansvini Aggarwal** - [https://github.com/Mansvini](https://github.com/Mansvini)
 - **Jacobo Martinez** - [https://github.com/cobidev](https://github.com/cobidev)
-- **Mansvini Aggarwal - [https://github.com/Mansvini](https://github.com/Mansvini)
-
-## Status
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3a029bfd-575c-41e5-8249-c864d482c2e5/deploy-status)](https://app.netlify.com/sites/the-simplefolio/deploys)
