@@ -167,8 +167,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
         if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
             if (it) o = it;
             var i = 0;
-            var F = function F() {
-            };
+            var F = function F() {};
             return {
                 s: F,
                 n: function n() {
@@ -265,8 +264,7 @@ function Module(moduleName) {
         _acceptCallbacks: [],
         _disposeCallbacks: [],
         accept: function accept(fn) {
-            this._acceptCallbacks.push(fn || function() {
-            });
+            this._acceptCallbacks.push(fn || function() {});
         },
         dispose: function dispose(fn) {
             this._disposeCallbacks.push(fn);
@@ -275,7 +273,7 @@ function Module(moduleName) {
     module.bundle.hotData = undefined;
 }
 module.bundle.Module = Module;
-var checkedAssets, acceptedAssets, assetsToAccept;
+var checkedAssets, acceptedAssets, assetsToAccept /*: Array<[ParcelRequire, string]> */ ;
 function getHostname() {
     return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
 }
@@ -289,10 +287,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     var protocol = HMR_SECURE || location.protocol == 'https:' && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? 'wss' : 'ws';
     var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/'); // $FlowFixMe
     ws.onmessage = function(event) {
-        checkedAssets = {
-        };
-        acceptedAssets = {
-        };
+        checkedAssets = {} /*: {|[string]: boolean|} */ ;
+        acceptedAssets = {} /*: {|[string]: boolean|} */ ;
         assetsToAccept = [];
         var data = JSON.parse(event.data);
         if (data.type === 'update') {
@@ -499,8 +495,7 @@ function hmrAcceptCheckOne(bundle, id, depsByBundle) {
 }
 function hmrAcceptRun(bundle, id) {
     var cached = bundle.cache[id];
-    bundle.hotData = {
-    };
+    bundle.hotData = {};
     if (cached && cached.hot) cached.hot.data = bundle.hotData;
     if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
         cb(bundle.hotData);
@@ -537,8 +532,7 @@ function initScrollReveal(targetElements, defaultProps) {
         reset: false
     });
     targetElements.forEach(({ element , animation  })=>{
-        ScrollReveal().reveal(element, Object.assign({
-        }, defaultProps, animation));
+        ScrollReveal().reveal(element, Object.assign({}, defaultProps, animation));
     });
 }
 exports.default = initScrollReveal;
@@ -596,8 +590,7 @@ var classCallCheck = function(instance, Constructor) {
  * Version 1.7.2
  */ var VanillaTilt = function() {
     function VanillaTilt1(element) {
-        var settings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {
-        };
+        var settings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
         classCallCheck(this, VanillaTilt1);
         if (!(element instanceof Node)) throw "Can't initialize VanillaTilt because " + element + " is not a Node.";
         this.width = null;
@@ -906,8 +899,7 @@ var classCallCheck = function(instance, Constructor) {
             gyroscopeMaxAngleY: 45,
             gyroscopeSamples: 10
         };
-        var newSettings = {
-        };
+        var newSettings = {};
         for(var property in defaultSettings){
             if (property in settings) newSettings[property] = settings[property];
             else if (this.element.hasAttribute("data-tilt-" + property)) {
